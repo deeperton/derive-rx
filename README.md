@@ -1,9 +1,9 @@
 
-# 🔁 derive-rx
+# derive-rx
 
 A tiny RxJS helper library to create *reactive derived observables* from one or more source streams. Designed to simplify `combineLatest`, `withLatestFrom`, and `switchMap` patterns while keeping everything **type-safe**, **reactive**, and **readable**.
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install derive-rx
@@ -11,13 +11,13 @@ npm install derive-rx
 yarn add derive-rx
 ```
 
-## 🚀 Functions
+## Functions
 
 ### `deriveFromBoth(...observables, computeFn)`
 
 Creates a derived observable that reacts to **any change** in the source observables. Similar to `combineLatest`, but with a clean compute function.
 
-✅ Supports both spread and array style.
+Supports both spread and array style.
 
 #### Example (spread):
 ```ts
@@ -35,8 +35,8 @@ deriveFromBoth([obs1$, obs2$], ([a, b]) => a * b);
 
 Emits a derived value **only when `a$` emits**, using the **latest value(s)** from `b$`.
 
-✅ Supports one or multiple `b$` observables.  
-🔁 Useful for avoiding unnecessary emissions from B.
+Supports one or multiple `b$` observables.  
+Useful for avoiding unnecessary emissions from B.
 
 #### Example (single B):
 ```ts
@@ -54,9 +54,9 @@ deriveFromAWithB(a$, [b1$, b2$], (a, b1, b2) => a + b1 - b2);
 
 Use when `B` is **dynamic based on A** — i.e., `a$` determines which observable(s) to listen to.
 
-🔄 Internally uses `switchMap`.
+Internally uses `switchMap`.
 
-✅ Supports single or multiple dynamic B observables.
+Supports single or multiple dynamic B observables.
 
 #### Example (single B):
 ```ts
@@ -74,13 +74,13 @@ deriveFromDynamicB(
 
 ---
 
-## ✅ Type Safety
+## Type Safety
 
 All functions are fully typed. Your compute function will always get autocompletion for the correct values, with no need to cast or destructure manually.
 
 ---
 
-## 🧪 Testing
+## Testing
 
 This library uses [`vitest`](https://vitest.dev) for unit testing.
 
@@ -92,20 +92,6 @@ Tests cover all functional cases, including edge cases like hot/cold observables
 
 ---
 
-## 🧠 Why Use This?
-
-- Replaces verbose RxJS glue code with clean utilities
-- Maintains full reactivity (no imperatives)
-- Works well in component libraries, signals, or state systems
-- Easy to reason about and test
-
----
-
-## 📄 License
+## License
 
 MIT
-```
-
----
-
-Let me know if you want to include usage with `React`, `Angular`, or in `Signals`/state stores!
