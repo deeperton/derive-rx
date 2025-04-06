@@ -2,7 +2,7 @@ import { BehaviorSubject, skip } from 'rxjs';
 import { take, tap, toArray } from 'rxjs/operators';
 import {
   deriveFromBoth,
-} from './getiter';
+} from './index';
 import {  describe, it, expect, beforeEach } from 'vitest';
 
 describe('deriveFromBoth Base', () => {

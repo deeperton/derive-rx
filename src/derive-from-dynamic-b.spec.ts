@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 import {
   deriveFromDynamicB
-} from './getiter';
+} from './index';
 
 describe('getDerivedDynamicB Base', () => {
   describe('getDerivedDynamicB', () => {

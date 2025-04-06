@@ -1,12 +1,23 @@
 {
-  "name": "getiter",
+  "name": "derive-rx",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "A tiny RxJS helper library for reactive derived observables.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "vitest --run",
+    "watch": "vitest"
   },
-  "private": true,
+  "keywords": ["rxjs", "observables", "derive", "combineLatest", "withLatestFrom", "switchMap"],
+  "author": "Anton Artiukh",
+  "license": "MIT",
+  "peerDependencies": {
+    "rxjs": "^7.0.0"
+  },
   "dependencies": {
     "rxjs": "^7.8.2",
     "typescript": "^5.8.3"
