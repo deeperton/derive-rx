@@ -1,0 +1,28 @@
+{
+  "name": "derive-rx",
+  "version": "0.0.1",
+  "description": "A tiny RxJS helper library for reactive derived observables.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest --run",
+    "watch": "vitest"
+  },
+  "keywords": ["rxjs", "observables", "derive", "combineLatest", "withLatestFrom", "switchMap"],
+  "author": "Anton Artiukh",
+  "license": "MIT",
+  "peerDependencies": {
+    "rxjs": "^7.0.0"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "vitest": "^3.1.1"
+  }
+}
