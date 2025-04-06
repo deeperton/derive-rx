@@ -1,1 +1,9 @@
 node_modules
+.idea
+dist
+.DS_Store
+*.log
+*.env
+*.local
+*.env.local
+*.env.development.local
