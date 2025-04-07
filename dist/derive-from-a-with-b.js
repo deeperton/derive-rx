@@ -2,7 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deriveFromAWithB = deriveFromAWithB;
 const operators_1 = require("rxjs/operators");
-// Implementation
+/**
+ * Derives a new observable from an observable A and a function that returns an observable B.
+ * @param args
+ * @returns {Observable<any>}
+ */
 function deriveFromAWithB(...args) {
     const a$ = args[0];
     const b = args[1];

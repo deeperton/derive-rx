@@ -3,7 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.deriveFromBoth = deriveFromBoth;
 const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
-// Implementation
+/**
+ * Derives a new observable from an observable A and a function that returns an observable B.
+ * @param args
+ * @returns {Observable<any>}
+ */
 function deriveFromBoth(...args) {
     if (Array.isArray(args[0])) {
         const sources = args[0];

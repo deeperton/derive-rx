@@ -1,21 +1,37 @@
 import { Observable, switchMap, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-// Overload 1: Single dynamic B observable
+/**
+ * Derives a new observable from an observable A and a function that returns an observable B.
+ * @param {Observable<A>} a$
+ * @param {(a: A) => Observable<B>} bFn
+ * @param {(a: A, b: B) => R} combine
+ * @returns {Observable<R>}
+ */
 export function deriveFromDynamicB<A, B, R>(
   a$: Observable<A>,
   bFn: (a: A) => Observable<B>,
   combine: (a: A, b: B) => R
 ): Observable<R>;
 
-// Overload 2: Multiple dynamic B observables
+/**
+ * Derives a new observable from an observable A and a function that returns an array of observables B.
+ * @param {Observable<A>} a$
+ * @param {(a: A) => ReadonlyArray<Observable<unknown>>} bFn
+ * @param {(a: A, ...b: B) => R} combine
+ * @returns {Observable<R>}
+ */
 export function deriveFromDynamicB<A, B extends readonly unknown[], R>(
   a$: Observable<A>,
   bFn: (a: A) => { [K in keyof B]: Observable<B[K]> },
   combine: (a: A, ...b: B) => R
 ): Observable<R>;
 
-// Implementation
+/**
+ * Derives a new observable from an observable A and a function that returns an observable B.
+ * @param args
+ * @returns {Observable<any>}
+ */
 export function deriveFromDynamicB(...args: any[]): Observable<any> {
   const a$ = args[0];
   const bFn = args[1];

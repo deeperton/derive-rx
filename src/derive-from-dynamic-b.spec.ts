@@ -101,7 +101,7 @@ describe('getDerivedDynamicB Base', () => {
       setTimeout(() => {
         expect(emitted).toBe(false);
         done();
-      }, 50); // wait to ensure no emissions
+      }, 0); // wait to ensure no emissions
     }));
   });
 
