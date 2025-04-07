@@ -5,11 +5,7 @@ A tiny RxJS helper library to create *reactive derived observables* from one or 
 
 ## Installation
 
-```bash
-npm install derive-rx
-# or
-yarn add derive-rx
-```
+Not been published yet.
 
 ## Functions
 
